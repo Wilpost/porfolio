@@ -1,0 +1,30 @@
+---
+    interface Props {
+        icon: any
+        alt: string
+    } 
+
+    const { icon: Icon, alt } = Astro.props
+---
+
+<button
+    aria-label="boton sin interactividad"
+    class="bg-[#cac1df] text-primaryDark dark:text-secondTextColor dark:bg-contrastGhostColor tecnologi_button"
+    disabled="true"
+    title={alt}
+>
+    <Icon size={20} />
+    <slot/>
+</button>
+
+<style>
+    .tecnologi_button {
+        display: flex;
+        padding: 4px;
+        border-radius: 5px;
+        font-size: 15px;
+        font-weight: 500;
+        align-items: center;
+        gap: 4px;
+    }
+</style>

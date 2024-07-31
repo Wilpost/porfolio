@@ -1,0 +1,104 @@
+---
+import { MdOutlineDarkMode } from "react-icons/md";
+import { IoSunnyOutline } from "react-icons/io5";
+---
+
+<nav
+  id="header"
+  class="
+      mb-8
+			sticky
+			left-[37%]
+			right-2/3
+			w-[401px]
+			px-3
+			animation-light
+			p-2
+		  z-50
+			rounded-3xl
+			dark:text-white
+			text-black
+			top-2
+			font-semibold
+			flex
+			items-center
+			justify-between"
+>
+  <ul class="
+        flex
+        list_nav
+				gap-3
+				items-center
+				justify-center
+				text-sm">
+    <a class="flex flex-col items-center" href="#sobre-mi">
+      Sobre mí
+      <div class="layer absolute bottom-3 p-[1px] px-1 rounded-full bg-primary"></div>
+    </a>
+    <a href="#tecnologies">Tecnologías</a>
+    <a href="#proyects">Proyectos</a>
+    <a href="#contact">Contacto</a>
+  </ul>
+
+  <ul>
+    <button
+      id="toggle_theme"
+      class="dark:hidden block p-2 hover:scale-110 text-white bg-zinc-800 active:scale-100 transition rounded-full"
+    >
+      <MdOutlineDarkMode size={20} />
+    </button>
+
+    <button
+      id="toggle_theme-2"
+      class="pop dark:block hidden p-2 hover:scale-110 text-black bg-white active:scale-100 transition rounded-full"
+    >
+      <IoSunnyOutline size={20} />
+    </button>
+  </ul>
+</nav>
+
+<style>
+  .layer {
+    animation-name: translateLayer;
+		animation-fill-mode: both;
+
+		animation-timeline: scroll(root);
+		animation-range: 0px 700px;
+  }
+
+  @keyframes translateLayer {
+    0% {
+      transform: translateX(0px);
+      width: 30px;
+    }
+    20% {
+      transform: translateX(0px);
+      width: 30px;
+    }
+
+    40% {
+      transform: translateX(77px);
+      width: 30px;
+    }
+
+    70% {
+      transform: translateX(77px);
+      width: 30px;
+    }
+
+    80% {
+      transform: translateX(90px);
+      width: 30px;
+    }
+
+    90% {
+      transform: translateX(167px);
+      width: 30px;
+    }
+
+    100% {
+      transform: translateX(167px);
+      width: 30px;
+    }
+  }
+</style>

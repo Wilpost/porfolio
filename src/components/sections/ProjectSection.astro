@@ -1,0 +1,25 @@
+---
+import ProyectCard from "../Cards/ProyectCard.astro";
+import Typography from "../Typography.astro";
+import { TECNOLOGIES_LIST } from '../../const/tecnologies'
+import TimeLine from "../TimeLine.astro";
+import { FaCode } from "react-icons/fa6";
+
+---
+
+<section
+    id="proyects"
+    class="w-[740px] p-5 flex flex-col justify-center gap-3 relative h-auto"
+>
+    <Typography
+        as="h2"
+        variant='head'
+        color="toggle"
+        class:list='flex gap-3 items-center'
+    >
+        <FaCode /> Proyectos / Experiencia
+    </Typography>
+
+    <TimeLine />
+   </div>
+</section>

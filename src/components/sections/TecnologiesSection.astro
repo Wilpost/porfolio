@@ -1,0 +1,64 @@
+---
+import Typography from "../Typography.astro";
+import { TECNOLOGIES_LIST } from '../../const/tecnologies'
+import ButtonTecnology from "../Buttons/ButtonTecnology.astro";
+---
+
+<section
+    id="tecnologies"
+    class="
+        w-full
+        h-auto
+        flex
+        flex-col
+        items-center
+        mt-12
+        p-2
+        gap-3
+    "
+>
+    <div
+        class="pl-80 flex flex-col justify-center"
+    >
+        <Typography
+        color="toggle"
+        as="h2"
+        variant="head"
+    >
+        Tecnologías
+    </Typography>
+
+    <!-- Lista de tecnologias -->
+    <ul
+        role="list"
+        class="
+            w-[70%]
+            justify-start
+            flex
+            flex-wrap
+            mt-1
+            bg-zinc-200
+            dark:bg-zinc-900
+            p-3
+            rounded-md
+            gap-2
+        "
+    >
+        {
+            TECNOLOGIES_LIST.map(tecnology => {
+                return (
+                    <li>
+                        <ButtonTecnology
+                            icon={tecnology.icon}
+                            alt={tecnology.alt}
+                        >
+                            {tecnology.name}
+                        </ButtonTecnology>
+                    </li>
+                )
+            })
+        }
+    </ul>
+    </div>
+
+</section>

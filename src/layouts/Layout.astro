@@ -1,51 +1,158 @@
 ---
+// Supports weights 100-900
+import '@fontsource-variable/onest';
+import Header from '../components/Header.astro';
 interface Props {
 	title: string;
+	description: string;
 }
 
-const { title } = Astro.props;
+	const { title, description } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
+
+	<script>
+		import $$ from '../const/selector'
+
+		const toggleThemeButton = $$('toggle_theme');
+		const toggleThemeButtonLight = $$('toggle_theme-2');
+
+		const bodyElement = $$('body');
+		const header = $$('header');
+
+		function validThemeForAnimation(action: string) {
+			if (action === 'light') {
+				header?.classList.add('animation-light')
+				header?.classList.remove('animation-dark')
+			} else {
+				header?.classList.add('animation-dark')
+				header?.classList.remove('animation-light')
+			}
+		}
+
+		document.addEventListener('DOMContentLoaded', () => {
+			const theme = localStorage.getItem('theme');
+			const mode = theme === 'dark' ? 'dark' : 'light'
+
+			bodyElement?.setAttribute("data-mode", mode)
+			validThemeForAnimation(mode)
+		})
+
+		function handleClick() {
+			const currentMode = localStorage.getItem('theme');
+			const mode = currentMode === 'dark' ? 'light' : 'dark'
+
+			localStorage.setItem('theme', mode);
+			bodyElement?.setAttribute("data-mode", mode)
+			validThemeForAnimation(mode)
+		}
+
+		toggleThemeButton?.addEventListener('click', handleClick)
+		toggleThemeButtonLight?.addEventListener('click', handleClick)
+
+	</script>
+
+	<body
+		id="body"
+		class="dark:bg-backgroundColorPrimary bg-white"
+	>
+		<div class="hidden dark:block -full w-full bg-slate-950">
+			<div class="absolute -z-10 bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] 	[mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]">
+			</div>
+		</div>
+
+		<div class="dark:hidden block fixed inset-0 -z-10 h-screen w-full bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"><div class="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-fuchsia-400 opacity-20 blur-[100px]"></div></div>
+
+		<Header />
+
 		<slot />
 	</body>
 </html>
+
+
 <style is:global>
 	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+		--color-primary: #6E56CF;
+		--ghost-primary: #1C1526;
+		--contrast-ghost-color: #2A1F45;
+		--gray-background-color: #232224;
+		--contrast-text-color: #BAA7FF;
+		--second-text-color: #cbcace;
+		--background-color-primary: #121113;
+		--background-color-secondary: #000000;
 	}
+
 	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
+		scroll-behavior: smooth;
 	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+
+	body {
+		color-scheme: dark;
+		height: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		font-family: 'Onest Variable', system-ui, sans-serif;
+		color: white;
+	}
+
+	.animation-light {
+		animation-timeline-name: --reveal;
+		animation-name: showNavLight;
+		animation-fill-mode: both;
+
+		animation-timeline: scroll(root);
+		animation-range: 0px 200px;
+	}
+
+	.animation-dark {
+		animation-timeline-name: --reveal;
+		animation-name: showNavDark;
+		animation-fill-mode: both;
+
+		animation-timeline: scroll(root);
+		animation-range: 0px 200px;
+	}
+
+	@keyframes showNavDark {
+		0% {
+			color: white;
+			background-color: transparent;
+		}
+		100% {
+			background-color: #7d79794a;
+			backdrop-filter: blur(12px);
+			color: white;
+		}
+	}
+
+	@keyframes showNavLight {
+		0% {
+			color: black;
+			background-color: transparent;
+		}
+		100% {
+			background-color: #9595955c;
+			box-shadow: 0px 0px 12px 0px #e3e1e1;
+		    backdrop-filter: blur(12px);
+		    color: black;
+		}
+	}
+
+	@keyframes (prefers-reduced-motion: reduce) {
+		html {
+			scroll-behavior: auto;
+		}
 	}
 </style>

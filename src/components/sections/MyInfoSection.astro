@@ -1,0 +1,67 @@
+---
+import ButtonEmail from "../Buttons/ButtonEmail.astro";
+import ButtonRedirect from "../Buttons/ButtonRedirect.astro";
+import Typography from "../Typography.astro";
+import { GrLocation } from "react-icons/gr";
+import { TbFileDownload } from "react-icons/tb";
+import { FaGithub } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+---
+
+<section id="sobre-mi" class="flex gap-8">
+    <img class="dark:opacity-0 w-52 scale-[1.3]" src="../../../public/image/pencil_circle.png" />
+
+    <img class="dark:opacity-0 w-28 absolute right-52 top-12" src="../../../public/image/arrow.png" />
+
+    <img class="w-40 left-[360px] top-[100px] absolute" src="../../../public/image/profle_photo.png" />
+
+    <div class="bg-contrastGhostColor top-10 left-72 w-60 h-60 rounded-full absolute opacity-75 blur-3xl -z-50" />
+
+    <article class="items-start justify-center flex flex-col gap-1">
+        <div class="flex items-center gap-2">
+            <Typography as="h1" variant='big' color="toggle" >
+                Wilyer Queipo Riera
+            </Typography>
+            
+            <button class="text-xs rounded-2xl bg-[#ccffd4] bg-opacity-8
+            0 border  border-green-600 dark:text-secondTextColor dark:border-primary dark:bg-ghostPrimary font-semibold text-[#0b6720] py-1 px-2">
+                Disponible para trabajar
+            </button>
+        </div>
+
+        <Typography as="h2" variant='bigger' color='toggle'>
+            Desarrollador Fullstack en Javascript - <span class="text-green-500 dark:text-green-400">Junior</span>
+        </Typography>
+
+        <p class="flex items-center font-medium text-md mt-1 dark:text-secondTextColor text-zinc-700">
+            <GrLocation size={22}/>
+            Venezuela, Lara
+        </p>
+
+        <div class="flex gap-2 text-[#363333] dark:text-secondTextColor items-center">
+            <ButtonEmail>wilyerqueiporiera@gmail.com</ButtonEmail>
+
+            <ButtonRedirect url="../../../public/files/public.png" fileName="CV | curriculum Wilyer Queipo">
+                <TbFileDownload size={23} />
+            </ButtonRedirect>
+            <ButtonRedirect url="https://github.com/Wilpost">
+                <FaGithub size={23}/>
+            </ButtonRedirect>
+            <ButtonRedirect>
+                <FaLinkedin size={23}/>
+            </ButtonRedirect>
+        </div>
+    </article>
+
+</section>
+
+<style>
+
+    .mash {
+        mask-image: radial-gradient(
+            black 1%,
+            transparent
+        );
+        filter: contrast(0.6);
+    }
+</style>

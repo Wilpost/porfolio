@@ -1,0 +1,125 @@
+---
+import Typography from "../Typography.astro";
+import { type Tecnologie } from '../../const/tecnologies'
+import ButtonTecnologyContrast from "../Buttons/ButtonTecnologyContrast.astro";
+import { FaGithub } from "react-icons/fa";
+import { GoLinkExternal } from "react-icons/go";
+import { IoMdArrowUp } from "react-icons/io";
+import { BiLayer } from "react-icons/bi";
+
+type Props = {
+    title: string;
+    image?: string;
+    description: string;
+    urlProyect: string;
+    urlGithub: string;
+    appLogo: string;
+    tecnology_uses: Tecnologie[];
+}
+
+const { title, image, description, tecnology_uses, appLogo, urlProyect, urlGithub } = Astro.props
+---
+
+<article
+    class="
+        card_container
+        w-full
+        flex
+        p-2
+        gap-3
+        group
+        relative
+        overflow-hidden
+        transition
+        h-64
+        rounded-lg
+    "
+>   
+
+    <!-- <div class="absolute left-[15px] w-3 h-3 bg-primary ring-4 ring-contrastGhostColor rounded-full" /> -->
+
+    <figure
+        class="absolute top-10 group-hover:scale-105 transition -right-10 w-[400px] h-full overflow-hidden rounded-md"
+    >
+        <img class="object-cover proyect_image rounded-md" src={image} alt="Imagen de preview acerca del proyecto">
+    </figure>
+    
+    <div
+        class="
+            w-full
+            flex
+            flex-col
+            gap-1
+        "
+    >
+    <Typography
+                as="span"
+                variant='medium'
+                class:list="flex items-center leading-1 dark:text-zinc-500 text-md font-bold mb-1 text-zinc-600"
+            >
+               <BiLayer size={21} /> Web app
+        </Typography>
+
+         <ul
+            role="list"
+            class="w-full mb-4 max-w-[300px] flex flex-wrap gap-2">
+            {
+                tecnology_uses.map(item => {
+                    return (
+                        <li>
+                            <ButtonTecnologyContrast
+                                icon={item.icon}
+                                alt={item.alt}
+                                color={item.color}
+                            >
+                                {item.name}
+                            </ButtonTecnologyContrast>
+                        </li>
+                    )
+                })
+            }
+        </ul>
+
+        <Typography
+            as="p"
+            variant='small'
+            class:list='text-balance text-sm mt-2 bg-zinc-300 dark:bg-zinc-800 p-3 h-44 rounded-md text-center w-[300px] dark:text-zinc-300 text-zinc-800 font-normal'
+        >
+            {description}
+        </Typography>
+
+        <!-- <div class="w-full mt-2 flex dark:text-zinc-300 text-zinc-800 gap-2 items-center">
+                <a class="cursor-pointer" href={urlGithub}>
+                    <FaGithub size={20} />
+                </a>
+
+                <a class="cursor-pointer" href={urlProyect}>
+                    <GoLinkExternal />
+                </a>
+        </div> -->
+    </div>
+</article>
+
+<style>
+    .backdrop_image {
+        width: 300px;
+        overflow: hidden;
+    }
+
+    .backdrop_image:hover > .proyect_image {
+        transform: scale(1.2);
+    }
+
+    .proyect_image {
+        object-fit: cover;
+        transition: all .1s;
+    }
+
+    .links {
+        color: var(--second-text-color);;
+    }
+
+    .links:hover {
+        color: white;
+    }
+</style>

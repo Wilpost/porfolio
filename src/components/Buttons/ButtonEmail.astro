@@ -1,0 +1,23 @@
+---
+
+---
+
+<button
+    aria-label="Boton para contactar por email"
+    class="primary_button cursor-default flex items-center gap-1"
+>
+    <img src="../../../public/icons/mail.svg">
+    <slot/>
+</button>
+
+<style
+>
+    .primary_button {
+        background-color: var(--color-primary);
+        color: white;
+        display: flex;
+        padding: 4px;
+        border-radius: 5px;
+        font-weight: 500;
+    }
+</style>

@@ -1,0 +1,39 @@
+---
+    import { type HTMLTag, type Polymorphic } from 'astro/types'
+
+    type Props<Tag extends HTMLTag> = Polymorphic<{
+        as: Tag,
+        variant: keyof typeof variantClasses
+        color?: keyof typeof colorClasses
+    }>
+
+    const { as: Tag, class: className, variant, color, ...props } = Astro.props
+
+    const variantClasses: {[key: string]: string} = {
+        'head': 'text-2xl leading-10 font-bold',
+        "body": "text-xl",
+        "medium": "text-md",
+        "small": "text-sm",
+        "big": "text-3xl font-bold",
+        "bigger": "text-1xl font-semibold"
+    }
+
+    const colorClasses = {
+        'white': 'text-white',
+        'gray': 'text-seconTextColor',
+        'primay': 'text-primary',
+        'secondary': 'text-secondTextColor',
+        'contrastText': 'text-contrastTextColor',
+        "toggle": "dark:text-white text-black"
+    }
+
+    const classes = [
+        variantClasses[variant as keyof typeof variantClasses],
+        colorClasses[color as keyof typeof colorClasses],
+        className,
+    ]
+---
+
+<tag class:list={classes} {...props} tabindex="0">
+    <slot/>
+</tag>
