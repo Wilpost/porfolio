@@ -3,14 +3,13 @@ import Typography from "../Typography.astro";
 import { TECNOLOGIES_LIST } from '../../const/tecnologies'
 import ButtonTecnology from "../Buttons/ButtonTecnology.astro";
 ---
-
+<!-- lg:pl-80  -->
 <section
     id="tecnologies"
     class="
         w-full
         h-auto
         flex
-        flex-col
         items-center
         mt-12
         p-2
@@ -18,7 +17,7 @@ import ButtonTecnology from "../Buttons/ButtonTecnology.astro";
     "
 >
     <div
-        class="pl-80 flex flex-col justify-center"
+        class="w-full pl-3 items-center flex flex-col justify-center"
     >
         <Typography
         color="toggle"
@@ -29,36 +28,48 @@ import ButtonTecnology from "../Buttons/ButtonTecnology.astro";
     </Typography>
 
     <!-- Lista de tecnologias -->
-    <ul
-        role="list"
+    <div
         class="
-            w-[70%]
-            justify-start
+            lg:px-32
             flex
-            flex-wrap
-            mt-1
-            bg-zinc-200
-            dark:bg-zinc-900
-            p-3
-            rounded-md
-            gap-2
+            w-full
+            justify-center
+            items-center
         "
     >
-        {
-            TECNOLOGIES_LIST.map(tecnology => {
-                return (
-                    <li>
-                        <ButtonTecnology
-                            icon={tecnology.icon}
-                            alt={tecnology.alt}
-                        >
-                            {tecnology.name}
-                        </ButtonTecnology>
-                    </li>
-                )
-            })
-        }
-    </ul>
+        <ul
+            role="list"
+            class="
+                md:w-[70%]
+                w-full
+                justify-start
+                flex
+                flex-wrap
+                mt-1
+                bg-zinc-200
+                dark:bg-zinc-900
+                p-3
+                rounded-md
+                pl-5
+                gap-2
+            "
+        >
+            {
+                TECNOLOGIES_LIST.map(tecnology => {
+                    return (
+                        <li>
+                            <ButtonTecnology
+                                icon={tecnology.icon}
+                                alt={tecnology.alt}
+                            >
+                                {tecnology.name}
+                            </ButtonTecnology>
+                        </li>
+                    )
+                })
+            }
+        </ul>
+    </div>
     </div>
 
 </section>

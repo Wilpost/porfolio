@@ -76,16 +76,43 @@ export const MAP_TECONOLOGYES_USES_PROYECTS = {
       color: "#d52b02",
     },
     {
+      name: "CSS",
+      icon: FaCss3Alt,
+      alt: "css",
+      color: "#387af8",
+    },
+    {
       name: "Tailwind CSS",
       icon: RiTailwindCssFill,
       alt: "tailwind css",
       color: "#38bdf8",
     },
+  ],
+  buhoo: [
     {
-      name: "CSS",
-      icon: FaCss3Alt,
-      alt: "css",
-      color: "#387af8",
+      name: "React JS",
+      icon: FaReact,
+      alt: "React js",
+    },
+    {
+      name: "Node JS",
+      icon: FaNodeJs,
+      alt: "node js",
+    },
+    {
+      name: "PostgreSQL",
+      icon: BiLogoPostgresql,
+      alt: "Postgresql",
+    },
+    {
+      name: "Express JS",
+      icon: SiExpress,
+      alt: "express js",
+    },
+    {
+      name: "Docker",
+      icon: FaDocker,
+      alt: "docker",
     },
   ],
 }
@@ -122,14 +149,14 @@ export const TECNOLOGIES_LIST: Tecnologie[] = [
     alt: "Next js",
   },
   {
-    name: "MySQL",
-    icon: GrMysql,
-    alt: "mysql",
-  },
-  {
     name: "Tailwind CSS",
     icon: RiTailwindCssFill,
     alt: "tailwind css",
+  },
+  {
+    name: "MySQL",
+    icon: GrMysql,
+    alt: "mysql",
   },
   {
     name: "Redux",

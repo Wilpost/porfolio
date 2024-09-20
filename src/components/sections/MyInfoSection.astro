@@ -8,14 +8,14 @@ import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 ---
 
-<section id="sobre-mi" class="flex gap-8">
-    <img class="dark:opacity-0 w-52 scale-[1.3]" src="../../../public/image/pencil_circle.png" />
+<section id="sobre-mi" class="flex md:flex-row flex-col gap-6 lg:gap-8">
+    <img class="dark:opacity-0 w-52 left-[334px] absolute xl:block hidden scale-[1.2]" src="../../../public/image/pencil_circle.png" />
 
-    <img class="dark:opacity-0 w-28 absolute right-52 top-12" src="../../../public/image/arrow.png" />
+    <img class="dark:opacity-0 w-32 rotate-12 lg:w-28 absolute right-48 lg:right-[17%] md:hidden lg:block top-28 lg:top-16" src="../../../public/image/arrow.png" />
 
-    <img class="w-40 left-[360px] top-[100px] absolute" src="../../../public/image/profle_photo.png" />
+    <img class="w-40 lg:left-[360px] lg:top-[100px]" src="../../../public/image/profle_photo.png" />
 
-    <div class="bg-contrastGhostColor top-10 left-72 w-60 h-60 rounded-full absolute opacity-75 blur-3xl -z-50" />
+    <div class="bg-contrastGhostColor top-10 -left-4 lg:left-72 w-60 h-60 rounded-full absolute opacity-60 blur-3xl -z-50" />
 
     <article class="items-start justify-center flex flex-col gap-1">
         <div class="flex items-center gap-2">
@@ -24,7 +24,7 @@ import { FaLinkedin } from "react-icons/fa";
             </Typography>
             
             <button class="text-xs rounded-2xl bg-[#ccffd4] bg-opacity-8
-            0 border  border-green-600 dark:text-secondTextColor dark:border-primary dark:bg-ghostPrimary font-semibold text-[#0b6720] py-1 px-2">
+            0 border border-green-600 dark:text-secondTextColor dark:border-primary dark:bg-ghostPrimary font-semibold text-[#0b6720] py-1 px-2">
                 Disponible para trabajar
             </button>
         </div>
@@ -39,7 +39,7 @@ import { FaLinkedin } from "react-icons/fa";
         </p>
 
         <div class="flex gap-2 text-[#363333] dark:text-secondTextColor items-center">
-            <ButtonEmail>wilyerqueiporiera@gmail.com</ButtonEmail>
+            <ButtonEmail>wilyer.developer@gmail.com</ButtonEmail>
 
             <ButtonRedirect url="../../../public/files/public.png" fileName="CV | curriculum Wilyer Queipo">
                 <TbFileDownload size={23} />
@@ -52,11 +52,9 @@ import { FaLinkedin } from "react-icons/fa";
             </ButtonRedirect>
         </div>
     </article>
-
 </section>
 
 <style>
-
     .mash {
         mask-image: radial-gradient(
             black 1%,

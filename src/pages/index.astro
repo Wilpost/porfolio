@@ -3,7 +3,6 @@ import AboutSection from '../components/sections/AboutSection.astro';
 import MyInfoSection from '../components/sections/MyInfoSection.astro';
 import ProjectSection from '../components/sections/ProjectSection.astro';
 import TecnologiesSection from '../components/sections/TecnologiesSection.astro';
-import Typography from '../components/Typography.astro';
 import { BiSend } from "react-icons/bi";
 
 import Layout from '../layouts/Layout.astro';
@@ -17,7 +16,7 @@ import Layout from '../layouts/Layout.astro';
 		class="w-full items-center flex flex-col gap-3"
 	>
 
-		<section
+	<section
 		class="
 			w-full
 			justify-center
@@ -25,12 +24,13 @@ import Layout from '../layouts/Layout.astro';
 			flex 
 			flex-col
 			p-4
+			px-4
 		"
 	>
 		<MyInfoSection />
 
 		<AboutSection />
-    	<span class="w-[54%] mt-5 p-[0.5px] bg-zinc-300 dark:bg-zinc-700"/>
+    <span class="w-full lg:w-[54%] mt-5 p-[0.5px] bg-zinc-300 dark:bg-zinc-700"/>
 	</section>
 
 		<TecnologiesSection />
@@ -58,6 +58,7 @@ import Layout from '../layouts/Layout.astro';
 						w-72
 						bg-zinc-200
 						text-zinc-800
+						dark:text-zinc-400
 						font-semibold
 						text-md
 						dark:bg-zinc-800
@@ -95,18 +96,18 @@ import Layout from '../layouts/Layout.astro';
 
 	<footer class="w-full min-h-20 p-10 flex items-end justify-center">
 		<div
-			class="w-3/4 flex px-10 items-center justify-around"
+			class="lg:w-3/4 flex lg:px-10 items-center justify-around"
 		>
 			<div class="leading-10">
-				<p class="text-center pointer-events-none select-none text-sm text-zinc-800 dark:text-zinc-400">&copy; 2024 Wilyer Queipo. Casi todos los derechos reservados</p>
-				<p class="text-start pointer-events-none select-none text-sm text-zinc-800 dark:text-zinc-400">
+				<p class="lg:text-center pointer-events-none select-none text-sm text-zinc-800 dark:text-zinc-400">&copy; 2024 Wilyer Queipo. Casi todos los derechos reservados</p>
+				<p class="lg:text-start text-center pointer-events-none select-none text-sm text-zinc-800 dark:text-zinc-400">
 					Echo con
 					<span class="dark:after:content-['🤍'] after:content-['❤']"/>
 					y Astro
 				</p>
 			</div>
 
-			<div class="flex gap-2 text-md font-semibold dark:text-white text-black">
+			<div class="lg:flex hidden gap-2 text-md font-semibold dark:text-white text-black">
 				<a href="#contacto">Contacto</a>
 			</div>
 		</div>
