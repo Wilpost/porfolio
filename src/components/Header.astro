@@ -30,7 +30,7 @@ import { IoSunnyOutline } from "react-icons/io5";
 				gap-3
 				items-center
 				justify-center
-				text-sm">
+				text-sm pl-1">
     <a class="flex flex-col items-center" href="#sobre-mi">
       Sobre mí
       <div class="layer absolute bottom-3 p-[1px] px-1 rounded-full lg:block hidden bg-primary"></div>
@@ -63,7 +63,7 @@ import { IoSunnyOutline } from "react-icons/io5";
 		animation-fill-mode: both;
 
 		animation-timeline: scroll(root);
-		animation-range: 0px 700px;
+		animation-range: 0px 1400px;
   }
 
   @keyframes translateLayer {
@@ -71,8 +71,14 @@ import { IoSunnyOutline } from "react-icons/io5";
       transform: translateX(0px);
       width: 30px;
     }
+
     20% {
       transform: translateX(0px);
+      width: 30px;
+    }
+
+    30% {
+      transform: translateX(77px);
       width: 30px;
     }
 
@@ -81,13 +87,18 @@ import { IoSunnyOutline } from "react-icons/io5";
       width: 30px;
     }
 
-    70% {
-      transform: translateX(77px);
+    41% {
+      transform: translateX(82px);
       width: 30px;
     }
 
-    80% {
-      transform: translateX(90px);
+    48% {
+      transform: translateX(167px);
+      width: 30px;
+    }
+
+    59% {
+      transform: translateX(167px);
       width: 30px;
     }
 
@@ -97,7 +108,7 @@ import { IoSunnyOutline } from "react-icons/io5";
     }
 
     100% {
-      transform: translateX(167px);
+      transform: translateX(243px);
       width: 30px;
     }
   }

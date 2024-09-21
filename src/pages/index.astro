@@ -3,9 +3,9 @@ import AboutSection from '../components/sections/AboutSection.astro';
 import MyInfoSection from '../components/sections/MyInfoSection.astro';
 import ProjectSection from '../components/sections/ProjectSection.astro';
 import TecnologiesSection from '../components/sections/TecnologiesSection.astro';
-import { BiSend } from "react-icons/bi";
 
 import Layout from '../layouts/Layout.astro';
+import { FaLinkedin } from 'react-icons/fa';
 ---
 
 <Layout
@@ -49,31 +49,31 @@ import Layout from '../layouts/Layout.astro';
 				Enviame un mensaje...
 			</Typography> -->
 
-			<span class="text-sm text-zinc-800 dark:text-secondTextColor mt-6">Enviame un mensaje...</span>
+			<span class="text-sm text-zinc-800 dark:text-secondTextColor mt-6">Enviame un correo...</span>
 			<form class="flex items-center gap-2 mt-2">
-				<input
-					type="text"
-					placeholder="Send message"
+				<button
+					disabled
 					class="
 						w-72
 						bg-zinc-200
-						text-zinc-800
-						dark:text-zinc-400
 						font-semibold
 						text-md
-						dark:bg-zinc-800
+						dark:bg-zinc-900
 						py-[6px]
 						pl-3
 						outline-none
 						px-2
+						border-[1px]
+						border-primary
 						focus:outline-primary
-						placeholder:text-zinc-700
-						placeholder:font-medium
+						text-zinc-700
+						dark:text-primary
+						dark:text-opacity-65
 						rounded-2xl
 					"
-				/>
+				>wilyer.developer@gmail.com</button>
 
-				<button
+				<!-- <button
 					class="
 						bg-primary
 						hover:bg-primaryDark
@@ -87,9 +87,9 @@ import Layout from '../layouts/Layout.astro';
 						text-white
 					"
 				>
-					<span class="sr-only">Send</span>
+					<span class="sr-only">wilyer.developer@gmail.com</span>
 					<BiSend size={22} />
-				</button>
+				</button> -->
 			</form>
 		</section>
 	</main>
@@ -107,8 +107,8 @@ import Layout from '../layouts/Layout.astro';
 				</p>
 			</div>
 
-			<div class="lg:flex hidden gap-2 text-md font-semibold dark:text-white text-black">
-				<a href="#contacto">Contacto</a>
+			<div class="dark:bg-zinc-900 dark:hover:bg-zinc-800 transition bg-zinc-200 hover:bg-zinc-300 rounded-full p-2 lg:flex hidden gap-2 -mt-2 text-md font-semibold dark:text-white text-zinc-900">
+				<a target="_blank" href="https://www.linkedin.com/in/wilyer-queipo-riera-0a69752b8"><FaLinkedin size={20}/></a>
 			</div>
 		</div>
 	</footer>

@@ -1,15 +1,44 @@
 ---
 import { Image } from "astro:assets";
 import { mail } from '../../assets/index'
+import { MdOutlineContentCopy  } from "react-icons/md";
+import { IoCheckmarkOutline } from "react-icons/io5";
 ---
 
 <button
+    id="buttonCopyEmail"
     aria-label="Boton para contactar por email"
-    class="primary_button cursor-default flex items-center gap-1"
+    class="primary_button flex items-center gap-1"
 >
-    <Image src={mail} alt='icono de correo'/>
+    <span id="copy" class="anm">
+        <MdOutlineContentCopy />
+    </span>
+
+    <span id="copied" class="hidden anm">
+        <IoCheckmarkOutline  />
+    </span>
     <slot/>
 </button>
+
+<script>
+    const buttonCopy = document.getElementById('buttonCopyEmail')
+    const copyIcon = document.getElementById('copy')
+    const copiedIcon = document.getElementById('copied')
+
+    buttonCopy?.addEventListener('click', handleCopyText)
+
+    function handleCopyText() {
+        copiedIcon?.classList.remove('hidden')
+        copyIcon?.classList.add('hidden')
+
+        setTimeout(() => {
+            copyIcon?.classList.remove('hidden')
+            copiedIcon?.classList.add('hidden')
+        }, 1000)
+
+        navigator.clipboard.writeText(buttonCopy?.lastChild?.textContent?.toString());
+    }
+</script>
 
 <style
 >
@@ -21,4 +50,25 @@ import { mail } from '../../assets/index'
         border-radius: 5px;
         font-weight: 500;
     }
+    .hidden {
+        display: none;
+    }
+
+    .anm {
+        animation-name: fade;
+        animation-delay: .2s;
+        animation-duration: .2s;
+        animation-fill-mode: both;
+    }
+
+    @keyframes fade {
+        0% {
+            opacity: 0;
+            scale: 0;
+        }
+        100% {
+            scale: 1;
+            opacity: 1;
+        }
+     }
 </style>
