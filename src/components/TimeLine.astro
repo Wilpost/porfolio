@@ -1,7 +1,10 @@
 ---
+import { Image } from "astro:assets";
 import { MAP_TECONOLOGYES_USES_PROYECTS } from "../const/tecnologies"
 import ProyectCard from "./Cards/ProyectCard.astro"
 import { IoMdArrowUp } from "react-icons/io";
+import { spotifyLogoDark, spotifyLogo, minecraftLogo, spotifyAppGround, minecraftAppGround, buhooAppGround } from '../assets/index'
+import { darkBuhooLogo } from "../assets/index";
 ---
 
 <ol class="relative w-full ml-2 lg:ml-4 border-s border-gray-600 dark:border-gray-700">                  
@@ -18,14 +21,14 @@ import { IoMdArrowUp } from "react-icons/io";
         <time class="text-sm font-normal leading-none text-gray-600 dark:text-gray-500 ml-2">Proyecto personal</time>
 
         <h3 class="text-xl font-extrabold mt-1 text-gray-900 dark:text-white">
-            <img class="w-7 ml-2 dark:inline-block hidden -mt-1" src='../assets/icons/Spotify_hero_logo.svg' alt="Icono referencial del proyecto">
+            <Image class="w-7 ml-2 dark:inline-block hidden -mt-1" src={spotifyLogo} alt="Icono referencial del proyecto" />
 
-            <img class="w-7 ml-2 dark:hidden inline-block -mt-1" src='../assets/icons/Spotify_hero_logo_dark.svg' alt="Icono referencial del proyecto">
+            <Image class="w-7 ml-2 dark:hidden inline-block -mt-1" src={spotifyLogoDark} alt="Icono referencial del proyecto" />
 
             Clon de Spotify
         </h3>
 
-        <ProyectCard title="Clon de Spotify" urlGithub="https://github.com/Wilpost/clon-de-spotify-wilyer" urlProyect="https://clon-spotify.netlify.app/" appLogo="../assets/icons/Spotify_hero_logo.svg" image="../../../public/image/proyects/Spotify-clon.png" description="Clon de Spotify creado con React, Zustand, tailwind css y también utilize Firebase como storage. En este proyecto utilize la API oficial de Spotify para obtener los datos de un usuario en concreto" tecnology_uses={MAP_TECONOLOGYES_USES_PROYECTS.spotifyClon} />
+        <ProyectCard title="Clon de Spotify" urlGithub="https://github.com/Wilpost/clon-de-spotify-wilyer" urlProyect="https://clon-spotify.netlify.app/" appLogo={spotifyLogo} image={spotifyAppGround} description="Clon de Spotify creado con React, Zustand, tailwind css y también utilize Firebase como storage. En este proyecto utilize la API oficial de Spotify para obtener los datos de un usuario en concreto" tecnology_uses={MAP_TECONOLOGYES_USES_PROYECTS.spotifyClon} />
         </svg>
     </a>
 
@@ -46,10 +49,10 @@ import { IoMdArrowUp } from "react-icons/io";
             Proyecto personal
         </time>
         <h3 class="text-lg ml-2 mt-1 font-extrabold text-gray-900 dark:text-white">
-            <img class="w-7 inline-block -mt-1" src='../assets/icons/Minecraft-Logo.png' alt="Icono referencial del proyecto">
+            <Image class="w-7 inline-block -mt-1" src={minecraftLogo} alt="Icono referencial del proyecto"/>
             Minecraft clon
         </h3>
-        <ProyectCard title="Minecraft clone" appLogo="../assets/icons/Minecraft-Logo.png" urlGithub="https://github.com/Wilpost/minecraft-clon-threejs" urlProyect="" image="../assets/image/proyects/minecraft-screenshot.png" description="Este Minecraft está creado con React Three js Fiber y React Three Cannon. Aprendí a usar Three.js pero ahora utilizando como base React, y a manejar físicas con React Cannon." tecnology_uses={MAP_TECONOLOGYES_USES_PROYECTS.minecraftClon} />
+        <ProyectCard title="Minecraft clone" appLogo={minecraftLogo} urlGithub="https://github.com/Wilpost/minecraft-clon-threejs" urlProyect="" image={minecraftAppGround} description="Este Minecraft está creado con React Three js Fiber y React Three Cannon. Aprendí a usar Three.js pero ahora utilizando como base React, y a manejar físicas con React Cannon." tecnology_uses={MAP_TECONOLOGYES_USES_PROYECTS.minecraftClon} />
     </li>
 
         <div class="absolute w-3 h-3 bg-gray-600 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-primary"/>
@@ -68,14 +71,14 @@ import { IoMdArrowUp } from "react-icons/io";
         <h3 class="text-lg ml-3 relative mt-1">
             <div class="w-6 z-0 top-0 p-[14px] rounded-full bg-white" />
 
-            <img class="w-6 absolute top-[6px] left-[2px] z-20 inline-block mr-1 -mt-1" src='../assets/icons/black-background.png' alt="Icono referencial del proyecto">
+            <Image class="w-6 absolute top-[6px] left-[2px] z-20 inline-block mr-1 -mt-1" src={darkBuhooLogo} alt="Icono referencial del proyecto"/>
 
             <!-- <img class="w-6 absolute top-[7px] left-[3px] hidden dark:inline-block mr-1 -mt-1" src='../../../public/icons/white-background.png' alt="Icono referencial del proyecto"> -->
 
             <span class="font-extrabold text-gray-900 dark:text-white absolute top-[2px] left-9">Buhoo - Envíos Blue Express</span>
         </h3>
 
-        <ProyectCard type="Shopify app" title="Minecraft clone" appLogo="../assets/icons/black-background.png" urlGithub="https://github.com/Wilpost/minecraft-clon-threejs" urlProyect="" image="../assets/image/proyects/Buhoo_app.png" description="Esta es una aplicación para tiendas de Shopify, Buhoo simplifica la creación de etiquetas para envíos con Blue Express. En lugar de pasar horas creando etiquetas manualmente, puedes hacerlo en minutos con solo unos clics." tecnology_uses={MAP_TECONOLOGYES_USES_PROYECTS.buhoo} />
+        <ProyectCard type="Shopify app" title="Minecraft clone" appLogo={darkBuhooLogo} urlGithub="https://github.com/Wilpost/minecraft-clon-threejs" urlProyect="" image={buhooAppGround} description="Esta es una aplicación para tiendas de Shopify, Buhoo simplifica la creación de etiquetas para envíos con Blue Express. En lugar de pasar horas creando etiquetas manualmente, puedes hacerlo en minutos con solo unos clics." tecnology_uses={MAP_TECONOLOGYES_USES_PROYECTS.buhoo} />
     </li>
 </ol>
 

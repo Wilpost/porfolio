@@ -1,12 +1,13 @@
 ---
-
+import { Image } from "astro:assets";
+import { mail } from '../../assets/index'
 ---
 
 <button
     aria-label="Boton para contactar por email"
     class="primary_button cursor-default flex items-center gap-1"
 >
-    <img src="../../assets/icons/mail.svg">
+    <Image src={mail} alt='icono de correo'/>
     <slot/>
 </button>
 

@@ -6,14 +6,16 @@ import { GrLocation } from "react-icons/gr";
 import { TbFileDownload } from "react-icons/tb";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
+import { Image } from "astro:assets";
+import { pencilCircle, arrow, profilePhoto } from '../../assets/index'
 ---
 
 <section id="sobre-mi" class="flex md:flex-row flex-col gap-6 lg:gap-8">
-    <img class="dark:opacity-0 w-52 left-[334px] absolute xl:block hidden scale-[1.2]" src="../../assets/image/pencil_circle.png" />
+    <Image alt='imagen de un circulo dibujado con lapiz' class="dark:opacity-0 w-52 left-[334px] absolute xl:block hidden scale-[1.2]" src={pencilCircle} />
 
-    <img class="dark:opacity-0 w-32 rotate-12 lg:w-28 absolute right-48 lg:right-[17%] md:hidden lg:block top-28 lg:top-16" src="../../assets/image/arrow.png" />
+    <Image alt="imagen de una flecha dibujada" class="dark:opacity-0 w-32 rotate-12 lg:w-28 absolute right-48 lg:right-[17%] md:hidden lg:block top-28 lg:top-16" src={arrow} />
 
-    <img class="w-40 lg:left-[360px] lg:top-[100px]" src="../../assets/image/profle_photo.png" />
+    <Image alt='foto de perfil del usuario' class="w-40 lg:left-[360px] lg:top-[100px]" src={profilePhoto} />
 
     <div class="bg-contrastGhostColor top-10 -left-4 lg:left-72 w-60 h-60 rounded-full absolute opacity-60 blur-3xl -z-50" />
 
