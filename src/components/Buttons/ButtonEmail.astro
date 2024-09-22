@@ -36,7 +36,7 @@ import { IoCheckmarkOutline } from "react-icons/io5";
             copiedIcon?.classList.add('hidden')
         }, 1000)
 
-        navigator.clipboard.writeText(buttonCopy?.lastChild?.textContent?.toString());
+        navigator.clipboard.writeText(buttonCopy?.lastChild?.textContent?.toString() ?? '');
     }
 </script>
 
