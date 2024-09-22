@@ -4,7 +4,7 @@ import ButtonRedirect from "../Buttons/ButtonRedirect.astro";
 import Typography from "../Typography.astro";
 import { GrLocation } from "react-icons/gr";
 import { TbFileDownload } from "react-icons/tb";
-import { FaGithub } from "react-icons/fa";
+import { FaFileCsv, FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { Image } from "astro:assets";
 import { pencilCircle, arrow, profilePhoto } from '../../assets/index'
@@ -43,8 +43,8 @@ import { pencilCircle, arrow, profilePhoto } from '../../assets/index'
         <div class="flex gap-2 text-[#363333] dark:text-secondTextColor items-center">
             <ButtonEmail>wilyer.developer@gmail.com</ButtonEmail>
 
-            <ButtonRedirect url="../../assets/files/public.png" fileName="CV | curriculum Wilyer Queipo">
-                <TbFileDownload size={23} />
+            <ButtonRedirect url="src/assets/files/Curriculum-dev.pdf">
+                <FaFileCsv size={23} />
             </ButtonRedirect>
             <ButtonRedirect url="https://github.com/Wilpost">
                 <FaGithub size={23}/>
