@@ -1,11 +1,12 @@
 ---
-import AboutSection from '../components/sections/AboutSection.astro';
+import ProfileSection from '../components/sections/Profile.astro';
 import MyInfoSection from '../components/sections/MyInfoSection.astro';
 import ProjectSection from '../components/sections/ProjectSection.astro';
 import TecnologiesSection from '../components/sections/TecnologiesSection.astro';
 
 import Layout from '../layouts/Layout.astro';
 import { FaLinkedin } from 'react-icons/fa';
+import AboutMeSection from '../components/sections/AboutMeSection.astro';
 ---
 
 <Layout
@@ -29,7 +30,7 @@ import { FaLinkedin } from 'react-icons/fa';
 	>
 		<MyInfoSection />
 
-		<AboutSection />
+		<ProfileSection />
     <span class="w-full lg:w-[54%] mt-5 p-[0.5px] bg-zinc-300 dark:bg-zinc-700"/>
 	</section>
 
@@ -48,6 +49,9 @@ import { FaLinkedin } from 'react-icons/fa';
 			<!-- <Typography as="h2" variant="head" color='toggle' >
 				Enviame un mensaje...
 			</Typography> -->
+
+			 <span class="w-full ml-16 mb-5 lg:w-[52%] mt-5 p-[0.5px] bg-zinc-300 dark:bg-zinc-700"/>
+			<AboutMeSection />
 
 			<span class="text-sm text-zinc-800 dark:text-secondTextColor mt-6">Enviame un correo...</span>
 			<form class="flex items-center gap-2 mt-2">
@@ -94,7 +98,7 @@ import { FaLinkedin } from 'react-icons/fa';
 		</section>
 	</main>
 
-	<footer class="w-full min-h-20 p-10 flex items-end justify-center">
+	<footer class="bg-zinc-900 mt-10 w-full min-h-20 p-10 flex items-end justify-center">
 		<div
 			class="lg:w-3/4 flex lg:px-10 items-center justify-around"
 		>

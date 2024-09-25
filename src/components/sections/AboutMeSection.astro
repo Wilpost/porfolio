@@ -1,0 +1,27 @@
+---
+import { FaUserCheck } from "react-icons/fa";
+import Typography from "../Typography.astro";
+
+
+---
+
+<section id="sobre-mi" class="w-full h-72 flex justify-center relative">
+   <!-- <div class="w-full"/> -->
+
+     <article class="w-[53%] card_info ml-14 rounded-xl bg-zinc-800 flex flex-col p-5 gap-5">
+        <Typography as="p" variant='heading-card'>About Me</Typography>
+
+            <Typography as="p" variant='prg' class:list="text-zinc-400">
+                <span class="font-bold">Hola! 👋🏼</span>, me llamo <span class="font-bold">Wilyer</span>, nací el <span class="font-bold">25 de marzo de 2006 en Venezuela, Edo Lara</span>, estudio programación desde que tengo <span class="font-bold">15 años</span>, comencé a programar gracias a que mi primo es <span class="font-bold">programador</span> y el iso que me atrajera aún más la 
+
+                <span class="font-bold">programación</span> y desde ese entonces me convertí en<span class="font-bold">Desarrollador Web</span>, también me gusta mucho el Futbol y salir a caminar en mis ratos libres, aunque casi siempre <span class="font-bold">estoy en la computadora escribiendo código</span>...
+            </Typography>
+    </article>
+
+</section>
+
+<style>
+    .card_info {
+    background: linear-gradient(61deg, rgba(18,17,19,1) 0%, #18181b  100%);
+    }
+</style>
