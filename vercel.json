@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/public/files/Curriculum-dev.pdf",
+      "destination": "/files/Curriculum-dev.pdf"
+    }
+  ]
+}
