@@ -14,13 +14,15 @@ type Props = {
     appLogo: ImageMetadata;
     tecnology_uses: Tecnologie[];
     type?: string
+    disable?: boolean
 }
 
-const { image, description, tecnology_uses, appLogo, urlGithub, type = 'Web app' } = Astro.props
+const { image, description, tecnology_uses, appLogo, urlGithub, type = 'Web app', disable = false } = Astro.props
 ---
 
 <article
-    class="
+    class={`
+    	${disable ? 'cursor-default opacity-50' : 'cursor-auto'}
         card_container
         w-full
         flex
@@ -33,7 +35,7 @@ const { image, description, tecnology_uses, appLogo, urlGithub, type = 'Web app'
         md:h-64
         h-[250px]
         rounded-lg
-    "
+    `}
 >   
 
     <!-- <div class="absolute left-[15px] w-3 h-3 bg-primary ring-4 ring-contrastGhostColor rounded-full" /> -->
@@ -49,7 +51,7 @@ const { image, description, tecnology_uses, appLogo, urlGithub, type = 'Web app'
     <Typography
                 as="span"
                 variant='medium'
-                class:list="flex items-center gap-1 leading-1 dark:text-zinc-500 text-sm pointer-events-none select-none font-semibold mb-1 text-zinc-600"
+                class:list={`${disable ? 'select-none' : 'select-text'} flex items-center gap-1 leading-1 dark:text-zinc-500 text-sm pointer-events-none select-none font-semibold mb-1 text-zinc-600`}
             >
                <BiLayer size={20} /> {type}
         </Typography>
@@ -79,7 +81,7 @@ const { image, description, tecnology_uses, appLogo, urlGithub, type = 'Web app'
         <Typography
             as="p"
             variant='small'
-            class:list='hidden md:block text-balance text-sm mt-2  md:bg-zinc-300 dark:bg-zinc-800 p-3 h-44 rounded-md text-center w-[300px] dark:text-zinc-300 text-zinc-900 font-medium'
+            class:list={`${disable ? 'select-none' : 'select-text'} hidden md:block text-balance text-sm mt-2  md:bg-zinc-300 dark:bg-zinc-800 p-3 h-44 rounded-md text-center w-[300px] dark:text-zinc-300 text-zinc-900 font-medium`}
         >
             {description}
         </Typography>
