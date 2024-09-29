@@ -8,12 +8,13 @@ import { FaFileCsv, FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { Image } from "astro:assets";
 import { pencilCircle, arrow, profilePhoto } from '../../assets/index'
+import { MdVerified } from "react-icons/md";
 ---
 
-<section id="#proyects" class="flex md:flex-row flex-col gap-6 lg:gap-8">
-    <Image alt='imagen de un circulo dibujado con lapiz' class="dark:opacity-0 w-52 left-[334px] absolute xl:block hidden scale-[1.2]" src={pencilCircle} />
+<section id="#proyects" class="w-full md:pl-20 lg:pl-0 lg:w-auto flex lg:flex-row flex-col gap-6 lg:gap-8">
+    <Image alt='imagen de un circulo dibujado con lapiz' class="dark:opacity-0 w-52 left-[24%] absolute xl:block hidden scale-[1.2]" src={pencilCircle} />
 
-    <Image alt="imagen de una flecha dibujada" class="dark:opacity-0 w-32 rotate-12 lg:w-28 absolute right-48 lg:right-[17%] md:hidden lg:block top-28 lg:top-16" src={arrow} />
+    <Image alt="imagen de una flecha dibujada" class="dark:opacity-0 w-32 rotate-12 lg:left-[78%] xl:left-[73%] lg:top-16 lg:w-28 absolute md:left-56 md:top-32 top-32 left-36" src={arrow} />
 
     <Image alt='foto de perfil del usuario' class="w-40 lg:left-[360px] lg:top-[100px]" src={profilePhoto} />
 
@@ -21,12 +22,17 @@ import { pencilCircle, arrow, profilePhoto } from '../../assets/index'
 
     <article class="items-start justify-center flex flex-col gap-1">
         <div class="flex items-center gap-2">
-            <Typography as="h1" variant='big' color="toggle" >
+            <Typography as="h1" variant='big' class:list='-mr-1' color="toggle" >
                 Wilyer Queipo Riera
             </Typography>
+
+            <div class='w-2 md:block top-2'>
+                <MdVerified color="#6E56CF" size={21} />
+            </div>
+
             
             <button class="text-xs rounded-2xl bg-[#ccffd4] bg-opacity-8
-            0 border border-green-600 dark:text-secondTextColor dark:border-primary dark:bg-ghostPrimary font-semibold text-[#0b6720] py-1 px-2">
+            0 border border-green-600 dark:text-secondTextColor dark:border-primary dark:bg-ghostPrimary font-semibold text-[#0b6720] py-1 px-2 relative left-2">
                 Disponible para trabajar
             </button>
         </div>
