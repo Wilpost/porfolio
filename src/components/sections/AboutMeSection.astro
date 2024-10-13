@@ -1,31 +1,22 @@
 ---
 import { FaUserCheck } from "react-icons/fa";
 import Typography from "../Typography.astro";
-
+import { AboutMe } from '../../assets/index'
+import Image from "astro/components/Image.astro";
 
 ---
 
-<section id="sobre-mi" class="w-full h-72 flex justify-center relative">
+<section id="sobre-mi" class="w-full h-auto flex justify-center relative">
    <!-- <div class="w-full"/> -->
 
-     <article class="md:w-full max-w-[560px] w-full text-center dark:card_info_dark  md:ml-14 rounded-xl flex flex-col p-5 gap-5">
-            <Typography class:list='justify-center flex gap-2 align-super dark:text-white text-zinc-800' as="h2" variant='big'>
-                <FaUserCheck class:list='text-zinc-900 dark:text-zinc-200' />
-                Sobre mí
-            </Typography>
-
-
-            <Typography as="p" variant='prg' class:list="text-zinc-800 dark:text-zinc-400">
-                <span class="font-bold">Hola! 👋🏼</span>, me llamo <span class="font-bold">Wilyer</span>, nací el <span class="font-bold">25 de marzo de 2006 en Venezuela, Edo Lara</span>, estudio programación desde que tengo <span class="font-bold">15 años</span>, comencé a programar gracias a que mi primo es <span class="font-bold">programador</span> y el iso que me atrajera aún más la 
-
-                <span class="font-bold">programación</span> y desde ese entonces me convertí en<span class="font-bold">Desarrollador Web</span>, también me gusta mucho el Futbol y salir a caminar en mis ratos libres, aunque casi siempre <span class="font-bold">estoy en la computadora escribiendo código</span>...
-            </Typography>
+     <article class="md:w-full relative h-full w-full text-center items-center justify-center dark:card_info_dark  md:ml-14 rounded-xl flex flex-col p-5 gap-5">
+            <div id="about_image" class:list="aboutMeDark" />
     </article>
 
 </section>
 
 <style>
     .card_info_dark {
-    background: linear-gradient(61deg, rgba(18,17,19,1) 0%, #18181b  100%);
+       background: linear-gradient(61deg, rgba(18,17,19,1) 0%, #18181b  100%);
     }
 </style>

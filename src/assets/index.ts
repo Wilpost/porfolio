@@ -18,3 +18,5 @@ export { default as profilePhoto } from "../assets/image/profle_photo.png"
 export { default as buhooAppGround } from "../assets/proyects/Buhoo_app.png"
 export { default as spotifyAppGround } from "../assets/proyects/Spotify-clon.png"
 export { default as minecraftAppGround } from "../assets/proyects/minecraft-screenshot.png"
+
+export { default as AboutMe } from "../assets/image/Aboutme-dark.png"

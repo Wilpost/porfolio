@@ -27,6 +27,8 @@ interface Props {
 		const toggleThemeButton = $$('toggle_theme');
 		const toggleThemeButtonLight = $$('toggle_theme-2');
 
+		const about_image = $$('about_image');
+
 		const bodyElement = $$('body');
 		const header = $$('header');
 
@@ -34,9 +36,15 @@ interface Props {
 			if (action === 'light') {
 				header?.classList.add('animation-light')
 				header?.classList.remove('animation-dark')
+
+				about_image?.classList.add('aboutMeLight')
+				about_image?.classList.remove('aboutMeDark')
 			} else {
 				header?.classList.add('animation-dark')
 				header?.classList.remove('animation-light')
+
+				about_image?.classList.add('aboutMeDark')
+				about_image?.classList.remove('aboutMeLight')
 			}
 		}
 
@@ -91,6 +99,26 @@ interface Props {
 		--background-color-primary: #121113;
 		--background-color-secondary: #000000;
 	}
+
+	.aboutMeDark {
+        width: 100%;
+        height: 400px;
+        background-position: 10px;
+        background-image: url('./../assets/image/Aboutme-dark.png');
+        background-size: 900px;
+        background-position-x: 180px;
+        background-repeat: no-repeat;
+    }
+
+	.aboutMeLight {
+        width: 100%;
+        height: 400px;
+        background-position: 10px;
+        background-image: url('./../assets/image/Aboutme-light.png');
+        background-size: 900px;
+        background-position-x: 180px;
+        background-repeat: no-repeat;
+    }
 
 	html::-webkit-scrollbar {
 		width: 7px;

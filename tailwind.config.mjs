@@ -4,6 +4,10 @@ export default {
   darkMode: ["selector", '[data-mode="dark"]'],
   theme: {
     extend: {
+      backgroundImage: {
+        imageDark: "/Aboutme-dark.png",
+        imageLight: "/Aboutme-light.png",
+      },
       colors: {
         primary: "#6E56CF",
         primaryDark: "#543fa9",
